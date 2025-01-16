@@ -6,9 +6,60 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		713C6BB62D389A6100174725 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 713C6B972D38993400174725 /* WidgetKit.framework */; };
+		713C6BB72D389A6100174725 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 713C6B992D38993400174725 /* SwiftUI.framework */; };
+		713C6BC82D389A6200174725 /* TimeCheckerWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 713C6BB52D389A6000174725 /* TimeCheckerWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		713C6BC62D389A6200174725 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 713C6B692D3896AD00174725 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 713C6BB42D389A6000174725;
+			remoteInfo = TimeCheckerWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		713C6BB02D38993700174725 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				713C6BC82D389A6200174725 /* TimeCheckerWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		713C6B712D3896AD00174725 /* BusClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BusClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		713C6B972D38993400174725 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		713C6B992D38993400174725 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		713C6BB52D389A6000174725 /* TimeCheckerWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TimeCheckerWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		713C6BD12D389C6A00174725 /* WatchTimeChecker.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = WatchTimeChecker.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		713C6BC92D389A6200174725 /* Exceptions for "TimeCheckerWidget" folder in "TimeCheckerWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 713C6BB42D389A6000174725 /* TimeCheckerWidgetExtension */;
+		};
+		713C6BD82D389C6A00174725 /* Exceptions for "WatchTimeChecker" folder in "WatchTimeChecker" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 713C6BD02D389C6A00174725 /* WatchTimeChecker */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		713C6B732D3896AD00174725 /* BusClock */ = {
@@ -16,10 +67,42 @@
 			path = BusClock;
 			sourceTree = "<group>";
 		};
+		713C6BB82D389A6100174725 /* TimeCheckerWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				713C6BC92D389A6200174725 /* Exceptions for "TimeCheckerWidget" folder in "TimeCheckerWidgetExtension" target */,
+			);
+			path = TimeCheckerWidget;
+			sourceTree = "<group>";
+		};
+		713C6BD22D389C6A00174725 /* WatchTimeChecker */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				713C6BD82D389C6A00174725 /* Exceptions for "WatchTimeChecker" folder in "WatchTimeChecker" target */,
+			);
+			path = WatchTimeChecker;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		713C6B6E2D3896AD00174725 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		713C6BB22D389A6000174725 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				713C6BB72D389A6100174725 /* SwiftUI.framework in Frameworks */,
+				713C6BB62D389A6100174725 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		713C6BCE2D389C6A00174725 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -33,6 +116,9 @@
 			isa = PBXGroup;
 			children = (
 				713C6B732D3896AD00174725 /* BusClock */,
+				713C6BB82D389A6100174725 /* TimeCheckerWidget */,
+				713C6BD22D389C6A00174725 /* WatchTimeChecker */,
+				713C6B962D38993400174725 /* Frameworks */,
 				713C6B722D3896AD00174725 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,8 +127,19 @@
 			isa = PBXGroup;
 			children = (
 				713C6B712D3896AD00174725 /* BusClock.app */,
+				713C6BB52D389A6000174725 /* TimeCheckerWidgetExtension.appex */,
+				713C6BD12D389C6A00174725 /* WatchTimeChecker.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		713C6B962D38993400174725 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				713C6B972D38993400174725 /* WidgetKit.framework */,
+				713C6B992D38993400174725 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -55,10 +152,12 @@
 				713C6B6D2D3896AD00174725 /* Sources */,
 				713C6B6E2D3896AD00174725 /* Frameworks */,
 				713C6B6F2D3896AD00174725 /* Resources */,
+				713C6BB02D38993700174725 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				713C6BC72D389A6200174725 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				713C6B732D3896AD00174725 /* BusClock */,
@@ -69,6 +168,50 @@
 			productName = BusClock;
 			productReference = 713C6B712D3896AD00174725 /* BusClock.app */;
 			productType = "com.apple.product-type.application";
+		};
+		713C6BB42D389A6000174725 /* TimeCheckerWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 713C6BCA2D389A6200174725 /* Build configuration list for PBXNativeTarget "TimeCheckerWidgetExtension" */;
+			buildPhases = (
+				713C6BB12D389A6000174725 /* Sources */,
+				713C6BB22D389A6000174725 /* Frameworks */,
+				713C6BB32D389A6000174725 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				713C6BB82D389A6100174725 /* TimeCheckerWidget */,
+			);
+			name = TimeCheckerWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = TimeCheckerWidgetExtension;
+			productReference = 713C6BB52D389A6000174725 /* TimeCheckerWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		713C6BD02D389C6A00174725 /* WatchTimeChecker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 713C6BD92D389C6A00174725 /* Build configuration list for PBXNativeTarget "WatchTimeChecker" */;
+			buildPhases = (
+				713C6BCD2D389C6A00174725 /* Sources */,
+				713C6BCE2D389C6A00174725 /* Frameworks */,
+				713C6BCF2D389C6A00174725 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				713C6BD22D389C6A00174725 /* WatchTimeChecker */,
+			);
+			name = WatchTimeChecker;
+			packageProductDependencies = (
+			);
+			productName = WatchTimeChecker;
+			productReference = 713C6BD12D389C6A00174725 /* WatchTimeChecker.appex */;
+			productType = "com.apple.product-type.extensionkit-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -81,6 +224,12 @@
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					713C6B702D3896AD00174725 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					713C6BB42D389A6000174725 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					713C6BD02D389C6A00174725 = {
 						CreatedOnToolsVersion = 16.2;
 					};
 				};
@@ -100,12 +249,28 @@
 			projectRoot = "";
 			targets = (
 				713C6B702D3896AD00174725 /* BusClock */,
+				713C6BB42D389A6000174725 /* TimeCheckerWidgetExtension */,
+				713C6BD02D389C6A00174725 /* WatchTimeChecker */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		713C6B6F2D3896AD00174725 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		713C6BB32D389A6000174725 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		713C6BCF2D389C6A00174725 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +287,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		713C6BB12D389A6000174725 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		713C6BCD2D389C6A00174725 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		713C6BC72D389A6200174725 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 713C6BB42D389A6000174725 /* TimeCheckerWidgetExtension */;
+			targetProxy = 713C6BC62D389A6200174725 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		713C6B7D2D3896AF00174725 /* Debug */ = {
@@ -302,6 +489,116 @@
 			};
 			name = Release;
 		};
+		713C6BCB2D389A6200174725 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RZTPRKK94J;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TimeCheckerWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TimeCheckerWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryota.BusClock.TimeCheckerWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		713C6BCC2D389A6200174725 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RZTPRKK94J;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TimeCheckerWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TimeCheckerWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryota.BusClock.TimeCheckerWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		713C6BDA2D389C6A00174725 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RZTPRKK94J;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WatchTimeChecker/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WatchTimeChecker;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryota.WatchTimeChecker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Debug;
+		};
+		713C6BDB2D389C6A00174725 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RZTPRKK94J;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WatchTimeChecker/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = WatchTimeChecker;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ryota.WatchTimeChecker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -319,6 +616,24 @@
 			buildConfigurations = (
 				713C6B802D3896AF00174725 /* Debug */,
 				713C6B812D3896AF00174725 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		713C6BCA2D389A6200174725 /* Build configuration list for PBXNativeTarget "TimeCheckerWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				713C6BCB2D389A6200174725 /* Debug */,
+				713C6BCC2D389A6200174725 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		713C6BD92D389C6A00174725 /* Build configuration list for PBXNativeTarget "WatchTimeChecker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				713C6BDA2D389C6A00174725 /* Debug */,
+				713C6BDB2D389C6A00174725 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

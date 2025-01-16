@@ -1,47 +1,33 @@
-import Foundation
-import Combine
 import SwiftUI
 
-class ClockViewModel: ObservableObject {
-    @Published var currentTime = Date()
-    @Published var upcomingBusTimes: [Date] = []
-    private var timer: Timer?
+struct ClockFaceView: View {
+    @ObservedObject var viewModel: ClockViewModel
     
-    init() {
-        startTimer()
-        updateUpcomingBuses()
-    }
-    
-    deinit {
-        timer?.invalidate()
-    }
-    
-    private func startTimer() {
-        // 1分ごとに更新
-        timer = Timer.scheduledTimer(withTimeInterval: 60, repeats: true) { [weak self] _ in
-            self?.currentTime = Date()
-            self?.updateUpcomingBuses()
+    var body: some View {
+        ZStack {
+            // 時計の文字盤
+            Circle()
+                .stroke(Color.gray.opacity(0.5), lineWidth: 2)
+                .frame(width: 200, height: 200)
+            
+            // 時間のメモリ
+            ForEach(0..<60) { minute in
+                let style = viewModel.getMarkerStyle(for: minute)
+                Rectangle()
+                    .fill(style.color)
+                    .frame(width: 2, height: style.length)
+                    .offset(y: -90 + style.length / 2)
+                    .rotationEffect(.degrees(Double(minute) * 6))
+            }
+            
+            // 現在時刻の針
+            ClockHand(date: viewModel.currentTime, color: .blue, handType: .hour)
+            ClockHand(date: viewModel.currentTime, color: .blue, handType: .minute)
         }
+        .padding()
     }
-    
-    func updateUpcomingBuses() {
-        upcomingBusTimes = BusSchedule.getUpcomingBusTimes(from: currentTime)
-    }
-    
-    func getMarkerStyle(for minute: Int) -> (length: CGFloat, color: Color) {
-        let upcomingBusMinutes = upcomingBusTimes.map { BusSchedule.getMinutes(from: $0) }
-        
-        if upcomingBusMinutes.contains(minute) {
-            return (CGFloat(20), Color.red)
-        }
-        
-        let length = minute % 5 == 0 ? CGFloat(15) : CGFloat(10)
-        return (length, Color.gray)
-    }
-    
-    func formattedTime(from date: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "HH:mm"
-        return formatter.string(from: date)
-    }
-} 
+}
+
+#Preview {
+    ClockFaceView(viewModel: ClockViewModel())
+}
