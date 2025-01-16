@@ -46,6 +46,6 @@ struct ClockHand: View {
 }
 
 #Preview {
-    ClockHand(date: Date(), color: .blue, handType: .hour)
+    ClockHand(date: Date(), color: .black, handType: .hour)
         .frame(width: 200, height: 200)
 } 
