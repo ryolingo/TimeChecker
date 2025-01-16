@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct BusClockApp: App {
+    
+    //appdelegateの設定
+    @UIApplicationDelegateAdaptor (AppDelegate.self) var appDelegate
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                
         }
     }
 }
+        

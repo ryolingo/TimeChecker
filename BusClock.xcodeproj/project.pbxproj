@@ -10,6 +10,8 @@
 		713C6BB62D389A6100174725 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 713C6B972D38993400174725 /* WidgetKit.framework */; };
 		713C6BB72D389A6100174725 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 713C6B992D38993400174725 /* SwiftUI.framework */; };
 		713C6BC82D389A6200174725 /* TimeCheckerWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 713C6BB52D389A6000174725 /* TimeCheckerWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		713C6BE22D38A90500174725 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 713C6BE02D38A90500174725 /* UserNotifications.framework */; };
+		713C6BE32D38A90500174725 /* UserNotificationsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 713C6BE12D38A90500174725 /* UserNotificationsUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,9 +44,18 @@
 		713C6B992D38993400174725 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		713C6BB52D389A6000174725 /* TimeCheckerWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TimeCheckerWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		713C6BD12D389C6A00174725 /* WatchTimeChecker.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = WatchTimeChecker.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		713C6BE02D38A90500174725 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		713C6BE12D38A90500174725 /* UserNotificationsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotificationsUI.framework; path = System/Library/Frameworks/UserNotificationsUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		710F93CD2D38E58A00B8D767 /* Exceptions for "TimeCheckerWidget" folder in "BusClock" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Models/WidgetBusSchedule.swift,
+			);
+			target = 713C6B702D3896AD00174725 /* BusClock */;
+		};
 		713C6BC92D389A6200174725 /* Exceptions for "TimeCheckerWidget" folder in "TimeCheckerWidgetExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -59,17 +70,28 @@
 			);
 			target = 713C6BD02D389C6A00174725 /* WatchTimeChecker */;
 		};
+		713C6BE62D38BBDB00174725 /* Exceptions for "BusClock" folder in "BusClock" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 713C6B702D3896AD00174725 /* BusClock */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		713C6B732D3896AD00174725 /* BusClock */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				713C6BE62D38BBDB00174725 /* Exceptions for "BusClock" folder in "BusClock" target */,
+			);
 			path = BusClock;
 			sourceTree = "<group>";
 		};
 		713C6BB82D389A6100174725 /* TimeCheckerWidget */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
+				710F93CD2D38E58A00B8D767 /* Exceptions for "TimeCheckerWidget" folder in "BusClock" target */,
 				713C6BC92D389A6200174725 /* Exceptions for "TimeCheckerWidget" folder in "TimeCheckerWidgetExtension" target */,
 			);
 			path = TimeCheckerWidget;
@@ -90,6 +112,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				713C6BE22D38A90500174725 /* UserNotifications.framework in Frameworks */,
+				713C6BE32D38A90500174725 /* UserNotificationsUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +160,8 @@
 		713C6B962D38993400174725 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				713C6BE02D38A90500174725 /* UserNotifications.framework */,
+				713C6BE12D38A90500174725 /* UserNotificationsUI.framework */,
 				713C6B972D38993400174725 /* WidgetKit.framework */,
 				713C6B992D38993400174725 /* SwiftUI.framework */,
 			);
